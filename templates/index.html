@@ -1,0 +1,18 @@
+{% include "util/frameworks.html" %}
+{% include "util/modals.html" %}
+
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet " href="{{ url_for('static', filename='css/index.css')}}">
+    
+    <div class="container my-5">
+        <h1 style="color: #13B9EA; font-family: 'Indie Flower', cursive; font-weight: bold;" >BKNS</h1>
+        <img src="{{ url_for('static', filename='img/vimeo_Logo.png') }}" class="img-fluid my-3" alt="vimeo" style="height: 120px;"><br>
+
+        <button class="btn btn-primary mt-4 mb-5" data-toggle="modal"
+        data-target="{{'#modal_upload'}}">Fazer upload</button>
+    
+</body>
+</html>
