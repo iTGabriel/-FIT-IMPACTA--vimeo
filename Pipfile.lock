@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d9498e1811ddc4e9daf72763762db5c6265d5ffb8a590daa7b44765b6c3087ae"
+            "sha256": "f114a9373b5a53582949ece5a335caa73b9bdc9ee67fa1c3a33cf320dd0ec55b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -105,6 +105,13 @@
             ],
             "version": "==1.1.1"
         },
+        "pipfile": {
+            "hashes": [
+                "sha256:f7d9f15de8b660986557eb3cc5391aa1a16207ac41bc378d03f414762d36c984"
+            ],
+            "index": "pypi",
+            "version": "==0.0.2"
+        },
         "pycurl": {
             "hashes": [
                 "sha256:1ba222eafcb740805d5c9fe778a47d2704bf764abe9a2546de90f159e4c3a116",
@@ -151,6 +158,13 @@
                 "sha256:f273d9b6d8b1b5e1d094a6eb8b72851b39b81099293344132c73332b60e3b893"
             ],
             "version": "==3.15.2"
+        },
+        "toml": {
+            "hashes": [
+                "sha256:229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c",
+                "sha256:235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e"
+            ],
+            "version": "==0.10.0"
         },
         "tuspy": {
             "hashes": [

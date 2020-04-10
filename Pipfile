@@ -11,6 +11,7 @@ jinja2 = "*"
 tuspy = "*"
 pyvimeo = "*"
 pycurl = "*"
+pipfile = "*"
 
 [requires]
 python_version = "3.8"

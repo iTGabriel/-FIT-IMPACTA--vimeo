@@ -1,21 +1,62 @@
 <div class="container col-md-6">
+
     {% for video in videos %}
 
+    <div class="card m-0" style="width: 18rem;">
+        <img class="card-img-top" src="{{ video['pictures']['sizes'][2]['link'] }}" alt="{{ video.name}}">
+        <div class="card-body">
+            <h5 class="card-title">{{ video.name}}</h5>
+            <p class="card-text">{{video.description}}</p>
+            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="{{'#modal_video'}}">Assistir</a>
+            <a href="#" class="btn btn-primary">Excluir</a>
+        </div>
 
 
-    <!-- <a href="#" style="text-decoration: none; color: #000;" data-toggle="modal" data-target="{{'#modal_video'}}"> -->
+        <div class="modal fade" id="modal_video" tabindex="1" role="dialog" aria-labelledby="modal_video_label"
+            aria-hidden="true">
 
-        <div class="card m-0" style="width: 18rem;">
-            <img class="card-img-top" src="{{ video['pictures']['sizes'][2]['link'] }}" alt="{{ video.name}}">
-            <div class="card-body">
-                <h5 class="card-title">{{ video.name}}</h5>
-                <p class="card-text">{{video.description}}</p>
-                <a href="#"  class="btn btn-primary" data-toggle="modal" data-target="{{'#modal_video'}}">Assistir</a>
-                <!-- <a href="{{url_for('video', video = video.uri)}}"  class="btn btn-primary">Assistir</a> -->
-                <a href="#" class="btn btn-primary">Excluir</a>
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title m-auto " id="modal_video_label">Vídeo {{ video.name }}</h5>
+                    </div>
+
+                    <div class="modal-body d-flex justify-content-between">
+                        <iframe frameborder='0' style='height: 450px'
+                            src="{{ video['embed']['html'].split(' ')[1].split('src=')[1].replace('"', '') }}"
+                            frameborder="0" class="ml-5"></iframe>
+
+                        <form class="mr-5" action="#" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="title_video">Titulo</label>
+                                <input type="text" name="title_video" class="form-control" id="title_video"
+                                    value="{{ video.name }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="describle_video">Descrição</label>
+                                <input type="text" name="describle_video" class="form-control" id="describle_video"
+                                    value="{{ video.description }}">
+                            </div>
+
+                            <div style="text-align: center;">
+                                <button type="submit" class="btn btn-primary">Atualizar dados</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary m-auto"
+                            data-dismiss="modal">Fechar/Cancelar</button>
+                    </div>
+                </div>
             </div>
         </div>
-    <!-- </a> -->
+
+
+    </div>
+
+
+
 
     {% endfor %}
 </div>
