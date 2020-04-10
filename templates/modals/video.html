@@ -1,14 +1,16 @@
-<div class="modal fade" id="modal_upload" tabindex="1" role="dialog" aria-labelledby="modal_upload_label"
+<div class="modal fade" id="modal_video" tabindex="1" role="dialog" aria-labelledby="modal_video_label"
     aria-hidden="true">
 
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title m-auto " id="modal_upload_label">Upload de vídeo</h5>
+                <h5 class="modal-title m-auto " id="modal_video_label">Upload de vídeo</h5>
             </div>
 
             <div class="modal-body">
-                <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+
+                {{ video.name}}
+                <!-- <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="title_video">Titulo</label>
                         <input type="text" name="title_video" class="form-control" id="title_video"
@@ -31,7 +33,7 @@
                     <div style="text-align: center;">
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </div>
-                </form>
+                </form> -->
 
             </div>
             <div class="modal-footer">

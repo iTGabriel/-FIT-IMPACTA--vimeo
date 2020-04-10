@@ -1,0 +1,21 @@
+<div class="container col-md-6">
+    {% for video in videos %}
+
+
+
+    <!-- <a href="#" style="text-decoration: none; color: #000;" data-toggle="modal" data-target="{{'#modal_video'}}"> -->
+
+        <div class="card m-0" style="width: 18rem;">
+            <img class="card-img-top" src="{{ video['pictures']['sizes'][2]['link'] }}" alt="{{ video.name}}">
+            <div class="card-body">
+                <h5 class="card-title">{{ video.name}}</h5>
+                <p class="card-text">{{video.description}}</p>
+                <a href="#"  class="btn btn-primary" data-toggle="modal" data-target="{{'#modal_video'}}">Assistir</a>
+                <!-- <a href="{{url_for('video', video = video.uri)}}"  class="btn btn-primary">Assistir</a> -->
+                <a href="#" class="btn btn-primary">Excluir</a>
+            </div>
+        </div>
+    <!-- </a> -->
+
+    {% endfor %}
+</div>
