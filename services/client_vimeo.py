@@ -2,9 +2,9 @@ import vimeo
 import os
 
 chaves = {
-    'token':'19ce383ca82104a1dc87ad12dd1be1c2',
-    'key':'ff8426ddae0857713c1aa93d86a90a5e78c89734',
-    'secret':'nA2wNJjkOeubrQ/d2PayBxo5a1OSX2UCQpOWZmHfBnNTCTWCpltR4KaRfTRomKBVHWOE90Q28B/+KOk87cOOByOHfBrWyltVVMMr50GzPVzo239HBBcz17O1xnylGpMR'
+    'token':'SEU TOKEN',
+    'key':'SUA CHAVE',
+    'secret':'SEU CÓDIGO SECRETO VIMEO'
 }
 
 vimeo_client = vimeo.VimeoClient(
