@@ -4,7 +4,7 @@ import os
 chaves = {
     'token':'SEU TOKEN',
     'key':'SUA CHAVE',
-    'secret':'SEU CÓDIGO SECRETO VIMEO'
+    'secret':'SEU'
 }
 
 vimeo_client = vimeo.VimeoClient(

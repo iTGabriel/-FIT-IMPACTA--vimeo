@@ -5,5 +5,5 @@ dados_api*
 *.avi
 *.flv
 *.wmv
-*.lock
 *.ini
+Pipfile.lock
