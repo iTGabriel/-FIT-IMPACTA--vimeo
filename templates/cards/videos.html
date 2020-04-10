@@ -1,8 +1,8 @@
-<div class="container col-md-6">
+<div class="container col-md-6 d-flex">
 
     {% for video in videos %}
 
-    <div class="card m-0" style="width: 18rem;">
+    <div class="card mx-1 my-0" style="width: 18rem;">
         <img class="card-img-top" src="{{ video['pictures']['sizes'][2]['link'] }}" alt="{{ video.name}}">
         <div class="card-body">
             <h5 class="card-title">{{ video.name}}</h5>

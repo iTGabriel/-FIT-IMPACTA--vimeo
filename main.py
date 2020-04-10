@@ -31,13 +31,15 @@ def upload():
     dados = {'name':titulo, 'description': descricao}
     
     try:
-        # save_file.salvar(app, arquivo)
-        # client_vimeo.upload(arquivo.filename, dados)
+        save_file.salvar(app, arquivo)
+        client_vimeo.upload(arquivo.filename, dados)
         message = "Vídeo Enviado com sucesso"
     except:
         message = "Falha ao realizar envio do vídeo"
 
-    return render_template('index.html', message=message)
+    dados_videos = client_vimeo.get_all()
+
+    return render_template('index.html', message=message, videos = dados_videos['data'])
 
 
 app.run('127.0.0.1', 8000)
