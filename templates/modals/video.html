@@ -1,43 +1,47 @@
-<div class="modal fade" id="modal_video" tabindex="1" role="dialog" aria-labelledby="modal_video_label"
-    aria-hidden="true">
+{% include "util/cabecalho.html" %}
 
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title m-auto " id="modal_video_label">Upload de vídeo</h5>
-            </div>
+<div class="container center" style="height: 100vh; flex-wrap: wrap;">
 
-            <div class="modal-body">
+    <div class="card col-xl-12 mx-1 my-0">
+        <div class="card-body">
+            <h5 class="card-title">Titulo: {{ video.name}}</h5>
+            <iframe src="{{ video['embed']['html'].split(' ')[1].split('src=')[1].replace('"', '') }}"
+                style="height: 520px; width: 100%;" frameborder="0"></iframe>
+            <p class="card-text">Descrição: {{video.description}}</p>
 
-                <!-- <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="title_video">Titulo</label>
-                        <input type="text" name="title_video" class="form-control" id="title_video"
-                            placeholder="Informe o titulo do vídeo">
-                    </div>
 
-                    <div class="form-group">
-                        <label for="describle_video">Descrição</label>
-                        <input type="text" name="describle_video" class="form-control" id="describle_video"
-                            placeholder="Informe a descrição do vídeo">
-                    </div>
+            <div class="card mt-0" style="max-width: 500px;">
+                <div class="card-body">
 
-                    <div class="form-group" style="text-align: center;">
-                        <label for="file_video" class="btn btn-dark">Aperte para escolher vídeo
+                    <form action="#" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="title_video">Titulo</label>
+                            <input type="text" name="title_video" class="form-control" id="title_video" value="{{video.name}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="describle_video">Descrição</label>
+                            <input type="text" name="describle_video" class="form-control" id="describle_video"
+                                value="{{video.description}}">
+                        </div>
 
-                            <input type="file" name="file_video" class="form-control" autocomplete="off" id="file_video" hidden>
-                        </label>
-                    </div>
+                        <div style="text-align: center;">
+                            <button type="button" class="btn btn-primary mb-3">Atualizar dados</button>
+                        </div>
 
-                    <div style="text-align: center;">
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                    </div>
-                </form> -->
+                        <a href="{{ url_for('index') }}" class="btn btn-secondary m-auto"
+                            data-dismiss="modal">Home/Cancelar</a>
+                    </form>
+                </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary m-auto" data-dismiss="modal">Fechar/Cancelar</button>
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
 </div>

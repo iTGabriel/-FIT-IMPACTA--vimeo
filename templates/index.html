@@ -1,39 +1,28 @@
-{% include "util/frameworks.html" %}
-{% include "modals/upload.html" %}
-
-</head>
-
-<body>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet " href="{{ url_for('static', filename='css/index.css')}}">
-
-    <div class="container my-5">
-        <h1 style="color: #13B9EA; font-family: 'Indie Flower', cursive; font-weight: bold;">BKNS</h1>
-        <img src="{{ url_for('static', filename='img/vimeo_Logo.png') }}" class="img-fluid mb-3" alt="vimeo"
-            style="height: 90px;"><br>
-
-        <div style="max-width: 300px;">
-
-            {% if message != None %}
-                {% if 'sucesso' in message.lower() %}
-                <div class="alert alert-success mb-1" role="alert">
-                    <strong>{{message}}</strong>
-                </div>
-                {% elif 'falha' in message.lower()%}
-                <div class="alert alert-danger mb-1" role="alert">
-                    <strong>{{message}}</strong>
-                </div>
-                {% else %}
-                {% endif %}
-            {% else %}
-
-            {% endif %}
+{% include 'util/cabecalho.html' %}
 
 
-            <button class="btn btn-primary mt-1 mb-5" data-toggle="modal" data-target="{{'#modal_upload'}}">Fazer
-                upload</button>
-        </div>
+<div style="max-width: 300px;">
+
+    {% if message != None %}
+    {% if 'sucesso' in message.lower() %}
+    <div class="alert alert-success mb-1" role="alert">
+        <strong>{{message}}</strong>
+    </div>
+    {% elif 'falha' in message.lower()%}
+    <div class="alert alert-danger mb-1" role="alert">
+        <strong>{{message}}</strong>
+    </div>
+    {% else %}
+    {% endif %}
+    {% else %}
+
+    {% endif %}
+
+
+    <button class="btn btn-primary mt-1 mb-5" data-toggle="modal" data-target="{{'#modal_upload'}}">Fazer
+        upload</button>
+</div>
+</div>
 
 {% include 'cards/videos.html' %}
 

@@ -12,13 +12,12 @@ def index():
     dados_videos = client_vimeo.get_all()
     return render_template('index.html',  message=None, videos = dados_videos['data'])
 
-@app.route('/video', methods=['GET'])
+@app.route('/video', methods=['POST', 'GET'])
 def video():
-    video_id = request.args.get('video')
+    video_id = request.form['video_id']
     video_id = video_id.split('/')[2]
     dados_video = client_vimeo.get_id(video_id)
-    link_iframe = dados_video['embed']['html'].split(' ')[1].split('src=')[1].replace('"', '')
-    return render_template('player/video.html', iframe = link_iframe)
+    return render_template('modals/video.html', video = dados_video)
 
 
 
