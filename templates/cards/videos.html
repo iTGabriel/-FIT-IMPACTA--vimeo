@@ -4,13 +4,13 @@
     <form action="{{ url_for('video') }}" method="POST">
 
         <div class="card mx-1 my-0" style="width: 18rem;">
-            <input type="text" hidden name="video_id" value="{{video.uri}}">
+            <input type="hidden" name="video_id" value="{{video.uri}}">
             <img class="card-img-top" src="{{ video['pictures']['sizes'][2]['link'] }}" alt="{{ video.name}}">
             <div class="card-body">
                 <h5 class="card-title">{{ video.name}}</h5>
                 <p class="card-text">{{video.description}}</p>
-                <button class="btn btn-primary">Assistir</button>
-                <a href="#" class="btn btn-primary">Excluir</a>
+                <button type="submit" class="btn btn-primary">Assistir</button>
+                <button type="submit" formaction="{{url_for('delete')}}" class="btn btn-danger">Excluir</button>
             </div>
         </div>
     </form>

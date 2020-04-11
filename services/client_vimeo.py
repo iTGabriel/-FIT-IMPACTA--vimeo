@@ -4,7 +4,7 @@ import os
 chaves = {
     'token':'SEU TOKEN',
     'key':'SUA CHAVE',
-    'secret':'SEU'
+    'secret':'SEU CÓDIGO SECRETO VIMEO'
 }
 
 vimeo_client = vimeo.VimeoClient(
@@ -18,7 +18,6 @@ def get_all():
     return vimeo_client.get('https://api.vimeo.com/users/111831013/videos').json()
 
 def get_id(video_id):
-    print(video_id)
     return vimeo_client.get('https://api.vimeo.com/videos/'+video_id).json()
 
 # // REALIZA UPLOAD DO VÍDEO SELECIONADO PARA A CONTA
@@ -27,3 +26,10 @@ def upload(video, dados):
     return vimeo_client.upload(video, data=dados)
     # os.remove(video)
 
+def update(video_id, dados):    
+    return vimeo_client.put('https://api.vimeo.com/videos/'+video_id, dados)
+    # return vimeo_client.patch('https://api.vimeo.com/videos/'+video_id, dados)
+
+
+def delete(video_id):
+    return vimeo_client.delete('https://api.vimeo.com/videos/'+video_id)
