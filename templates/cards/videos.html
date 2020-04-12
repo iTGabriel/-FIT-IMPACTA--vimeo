@@ -1,9 +1,9 @@
-<div class="container col-md-12 d-flex justify-content-center">
+<div class="container col-md-12 d-flex justify-content-center" style="flex-flow: wrap">
 
     {% for video in videos %}
     <form action="{{ url_for('video') }}" method="POST">
 
-        <div class="card mx-1 my-0" style="width: 18rem;">
+        <div class="card mx-1 my-3" style="width: 18rem;">
             <input type="hidden" name="video_id" value="{{video.uri}}">
             <img class="card-img-top" src="{{ video['pictures']['sizes'][2]['link'] }}" alt="{{ video.name}}">
             <div class="card-body">

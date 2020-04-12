@@ -4,14 +4,14 @@ from services.util import save_file
 
 app = Flask(__name__)
 
-# print(client_vimeo.get_id('406105527'))
-
-
+################## - ######### 
+# Rota utilizada para vuscar todos os vídeos/dados da conta do usuário/'chaves de acesso'
 @app.route('/')
 def index():
     dados_videos = client_vimeo.get_all()
     return render_template('index.html',  message=None, videos = dados_videos['data'])
 
+#  Rota utilizada para buscar o vídeo especifico/ID fornecido = 'video_id'
 @app.route('/video', methods=['POST', 'GET'])
 def video():
     video_id = request.form['video_id']
@@ -20,6 +20,8 @@ def video():
     return render_template('modals/video.html', video = dados_video)
 
 
+################## - #########
+# Rota para realizar uplodar/envio de vídeos
 @app.route('/upload', methods=['POST', 'GET'])
 def upload():
     titulo = request.form['title_video']
@@ -38,6 +40,9 @@ def upload():
 
     return render_template('index.html', message=message, videos = dados_videos['data'])
 
+
+################## - #########
+# Rota para realizar atualizações dos dados conforme o 'id_video' fornecido
 @app.route('/update', methods=['POST'])
 def update():
     video_id = request.form['id_video']
@@ -54,6 +59,8 @@ def update():
     return render_template('index.html', message = message, videos = dados_videos['data'])
 
 
+################## - #########
+# Rota utilizada para realizar a exclusão do vídeo, conforme o 'id_video' fornecido
 @app.route('/delete', methods=['POST', 'GET'])
 def delete():
     video_id = request.form['video_id'].split('/')[2]
@@ -68,5 +75,3 @@ def delete():
 
 
 app.run('127.0.0.1', 8000)
-
-    # return "up"
