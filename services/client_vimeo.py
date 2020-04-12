@@ -4,7 +4,7 @@ import os
 chaves = {
     'token':'SEU TOKEN',
     'key':'SUA CHAVE/KEY',
-    'secret':'SUA CHAVE SECRETA VIMEO'
+    'secret':'SEU CÓDIGO SECRETO VIMEO'
 }
 
 vimeo_client = vimeo.VimeoClient(
@@ -28,7 +28,6 @@ def upload(video, dados):
 
 def update(video_id, dados):    
     return vimeo_client.patch('https://api.vimeo.com/videos/'+video_id, data = dados)
-    # return vimeo_client.patch('https://api.vimeo.com/videos/'+video_id, dados)
 
 
 def delete(video_id):
