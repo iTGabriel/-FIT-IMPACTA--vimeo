@@ -5,17 +5,9 @@
 #############################
 #
 #
-#   Para realizar a instalação das dependencias execute os comandos abaixos
-# pip install pipenv
-# pipenv shell
-# pipenv install tuspy
-# pipenv install pycurl
-#
-# pipenvn = Gerenciador de dependencias do Python, ao invés de instalar diretamente na raiz do SO,
-# cria um ambiente virtual para então instalar o pacote/package somente ali
-#
-# pipenv shell = Entra no modo interativo com o ambiente virtual,
-# roda o comando python/pip neste ambiente ao invés no SO
+# Para realizar a instalação das dependencias execute os comandos abaixos
+# pip install tuspy
+# pip install pycurl
 #
 # tuspy e pycurl = Dependencia requirida pela VimeoApi para realizar acesso ao protocolo http.
 ######################################################################################################
