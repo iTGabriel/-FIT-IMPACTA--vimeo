@@ -39,7 +39,6 @@ def upload():
         message = "Falha ao realizar envio do vídeo"
 
     dados_videos = client_vimeo.get_all()
-    print("+++++++\n\n"+os.getcwd())
 
     return render_template('index.html', message=message, videos = dados_videos['data'])
 
